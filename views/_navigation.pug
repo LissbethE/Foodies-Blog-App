@@ -1,0 +1,48 @@
+section.u-margin-bottom-small
+    section.navbar
+        nav.navbar__social
+            div.navbar__icon-box
+                svg.navbar__icon
+                    use(xlink:href="/img/sprite.svg#icon-facebook")
+            div.navbar__icon-box
+                svg.navbar__icon
+                    use(xlink:href="/img/sprite.svg#icon-instagram")
+            div.navbar__icon-box
+                svg.navbar__icon
+                    use(xlink:href="/img/sprite.svg#icon-twitter")
+            div.navbar__icon-box
+                svg.navbar__icon
+                    use(xlink:href="/img/sprite.svg#icon-google")
+
+        div.navbar__action
+            //-form(method="POST", action="/search")
+            //-   input(type="search", name="searchRecipe", placeholder="Buscar receta...", ariaLabel="Search")
+
+
+            if user
+                a.navbar__Logout.u-margin-right-small.btn.btn--Logout Cerrar sesión
+                a(href='/account').navbar__user
+                    img(src=`/img/users/${user.photo}`, alt=`user photo: ${user.name}`).navbar__user-photo
+                    p.navbar__user-name= user.name
+            else
+                a(href='/login').navbar__login.btn.u-margin-right-small.btn.btn--login Iniciar Sesíon
+                a(href='/signup').navbar__signup.btn.btn--signup Inscribirse &#8594;
+
+
+    section.nav-pages
+        .logo.u-margin-bottom-small-2
+            h3.logo__main Foodies Blog
+            p.logo__sub Blog de recetas fáciles & deliciosa
+
+        ul.nav-pages__list
+            li.nav-pages__item
+                a(href="/").nav-pages__link Home
+            li.nav-pages__item
+                a(href="/savoryRecipe").nav-pages__link Recetas Saladas
+            li.nav-pages__item
+                a(href="/vegetarianRecipe").nav-pages__link Recetas Vegetariana
+            li.nav-pages__item
+                a(href="/sweetRecipe").nav-pages__link Recetas Dulces
+            li.nav-pages__item
+                a(href="/userRecipe").nav-pages__link Recetas usuarios
+

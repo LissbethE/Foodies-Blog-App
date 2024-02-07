@@ -1,0 +1,42 @@
+.recipeInfo {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 1rem;
+  padding: 0 2rem;
+
+  margin-top: -1rem;
+
+  &--section-recipe {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem;
+
+    border: 2px solid $color-secondary;
+  }
+
+  &__box {
+    flex: 1 0 45%;
+    // background-color: lime;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &--section-recipe {
+      justify-content: center;
+    }
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    line-height: 0;
+    fill: $color-secondary;
+    display: inline-block;
+
+    &--user {
+      fill: $color-primary;
+    }
+  }
+}

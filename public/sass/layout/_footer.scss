@@ -1,0 +1,41 @@
+.footer {
+  width: 100%;
+  padding: 4rem 3rem 1rem 3rem;
+  background-color: $color-dark;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include respond(bp-800) {
+    justify-content: center;
+    row-gap: 2rem;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 1rem;
+
+    @include respond(bp-800) {
+      justify-content: center;
+    }
+
+    & > * {
+      font-size: 1.4rem;
+      color: $color-light;
+      list-style: none;
+
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: 1.3rem;
+    color: $color-light;
+  }
+}

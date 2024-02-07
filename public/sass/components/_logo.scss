@@ -1,0 +1,24 @@
+.logo {
+  text-align: center;
+
+  &__main {
+    font-family: $font-pacifico;
+    font-size: Max(3vw, 3rem);
+    color: $color-dark;
+
+    &--footer {
+      font-size: 3rem;
+      color: $color-secondary;
+    }
+
+    @include respond(phone) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__sub {
+    &--footer {
+      color: $color-light;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+extends base
+
+block content
+    main.content
+        section.section-recipe 
+            div.recipe
+                div.recipe__header.u-margin-bottom-medium 
+                    div.recipe__img-box
+                        img(src=`/img/recipes/${recipe.recipePhoto}`, alt=`${recipe.nombre}`).recipe__img
+                     
+                    
+                    div.recipe__description
+                        div.recipe__heading-box
+                            h1.heading-1.heading-1--colorSecundary.u-center-text= recipe.nombre
+                        p.recipe__paragraph.paragraph= recipe.resumen
+        
+
+                        div.recipeInfo.recipeInfo--section-recipe
+                            div.recipeInfo__box.recipeInfo__box--section-recipe
+                                svg.recipeInfo__icon
+                                    use(xlink:href="/img/sprite.svg#icon-document")
+                                p.paragraph= `Receta ${recipe.tipo}`
+
+                            div.recipeInfo__box.recipeInfo__box--section-recipe
+                                svg.recipeInfo__icon
+                                    use(xlink:href="/img/sprite.svg#icon-bowl")
+                                p.paragraph= `Plato ${recipe.plato}`
+
+                            div.recipeInfo__box.recipeInfo__box--section-recipe
+                                svg.recipeInfo__icon
+                                    use(xlink:href="/img/sprite.svg#icon-bar-graph")
+                                p.paragraph= `Dificultad ${recipe.dificultad}`
+
+                            div.recipeInfo__box.recipeInfo__box--section-recipe
+                                svg.recipeInfo__icon
+                                    use(xlink:href="/img/sprite.svg#icon-hour-glass")
+                                p.paragraph= `${recipe.duracion}m`
+
+                            div.recipeInfo__box.recipeInfo__box--section-recipe
+                                svg.recipeInfo__icon
+                                    use(xlink:href="/img/sprite.svg#icon-users")
+                                p.paragraph= `${recipe.comensales} comensales`
+
+                            div.recipeInfo__box.recipeInfo__box--section-recipe
+                                svg.recipeInfo__icon
+                                    use(xlink:href="/img/sprite.svg#icon-credit")
+                                p.paragraph= `Coste ${recipe.costo}`
+
+
+                div.recipe__ingredients.u-margin-bottom-medium 
+                        h2.heading-2.heading-2--light.u-margin-bottom-medium 🍽️Ingredientes
+                        ul.recipe__list
+                            - const ings = recipe.ingredientes.map((e) => e.split('\n'))
+                            each ing in ings
+
+                                li.recipe__item
+                                   
+                                    if (ing[0] === "\r" || ing[0] === undefined || ing[0] === "")
+                                        span= ing[1]
+
+                                    else if(ing[1] === "\r" || ing[1] === undefined || ing[1] === "")
+                                        span= ing[0]
+
+                                    else 
+                                        span= ing[0]
+                                        span.dot
+                                        span= ing[1]
+
+                            
+              
+                
+                div.recipe__cook
+                    h2.heading-2.u-margin-bottom-medium 🙌 ¡A cocinar! 🥣
+                    - const text = recipe.preparacion.split('\n');
+                    each p in text
+                        p.paragraph= p
+                
+                if recipe.user
+                    div.recipe__user.u-margin-top-big 
+                        img.recipe__user-photo(src=`/img/users/${recipe.user.photo}`, alt=`${recipe.user.name}`)
+                        h3.recipe__user-name= recipe.user.name
+                    

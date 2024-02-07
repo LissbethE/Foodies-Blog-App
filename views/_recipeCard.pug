@@ -1,0 +1,57 @@
+mixin isUser(isUser, icon, type)
+    if isUser
+        div.recipeInfo__box
+            svg.recipeInfo__icon.recipeInfo__icon--user 
+                use(xlink:href=`/img/sprite.svg#icon-${icon}`)
+            p.paragraph.paragraph--recipeInfo= type
+    else
+        div.recipeInfo__box
+            svg.recipeInfo__icon
+                use(xlink:href=`/img/sprite.svg#icon-${icon}`)
+            p.paragraph.paragraph--recipeInfo= type
+
+
+div.card-container
+    each recipe in recipes
+        div.card
+            if user && recipe.user
+               if recipe.user._id.toString() === user._id.toString()
+                    button#deleteRecipe.card__btn-delete(type="button", data-recipeid=`${recipe._id}`) X
+                  
+
+
+        
+            img(src=`/img/recipes/${recipe.recipePhoto}`, alt=`${recipe.nombre}`).card__img 
+            
+            if recipe.user
+                div.card__heading-box.card__heading-box--user
+                    h3.card__heading= recipe.nombre
+            else
+                div.card__heading-box
+                    h3.card__heading= recipe.nombre
+
+
+            div.recipeInfo.u-margin-bottom-small-2
+                +isUser(recipe.user, "document",`Receta ${recipe.tipo}`)
+                +isUser(recipe.user, "bowl", `Plato ${recipe.plato}`)
+                +isUser(recipe.user, "bar-graph", `Dificultad ${recipe.dificultad}`)
+                +isUser(recipe.user, "hour-glass", `${recipe.duracion}m`)
+                +isUser(recipe.user, "users", `${recipe.comensales} comensales`)
+                +isUser(recipe.user, "credit", `Coste ${recipe.costo}`)
+             
+
+            p.paragraph.card__description= `${recipe.resumen.slice(0, 100)}`
+
+            
+            if recipe.user
+                div.card__user.u-margin-top-small-2
+                    img.card__user-photo(src=`/img/users/${recipe.user.photo}`, alt=`${recipe.user.name}`)
+                    h3.card__user-name= recipe.user.name
+                    a(href=`/recipe/${recipe.slug}`).card__link.card__link--user ver receta &#8594;
+            else
+                a(href=`/recipe/${recipe.slug}`).card__link.u-margin-bottom-small-2 ver receta &#8594;
+
+
+    
+                
+           

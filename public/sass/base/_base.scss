@@ -1,0 +1,164 @@
+html {
+  font-size: 62.5%;
+
+  ///////////////////////////////////
+  // if width <= 900px
+  @include respond(tab-portrait) {
+    font-size: 56.25%; // 9px
+  }
+
+  // width <= 600
+  @include respond(phone) {
+    font-size: 50%; // 8px
+  }
+
+  // if width <= 400px
+  @include respond(smallPhone) {
+    font-size: 43.75%; // 7px
+  }
+
+  // width >= 1800px
+  @include respond(big-desktop) {
+    font-size: 100%; // 16px
+  }
+
+  // width >= 2000px
+  @include respond(big-desktop-2) {
+    font-size: 125%; // 20px
+  }
+
+  ///////////////////////////////////
+  /* Scroll Smoothly */
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  background-color: $color-light;
+
+  /*
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $color-light;
+
+    box-shadow: inset 0 0 5px grey;
+    // border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-secondary;
+    // border-radius: 10px;
+    // border: 5px solid $color-light;
+  }*/
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+a {
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background-color: $color-secondary;
+  color: $color-primary;
+}
+
+.content {
+  padding: 0 3rem;
+
+  @include respond(bp-800) {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.header__hero {
+  @include respond(bp-800) {
+    padding: 0 3rem;
+  }
+}
+
+.section-recipeType {
+  padding: 10rem 0;
+
+  @include respond(bp-800) {
+    padding: 4rem 3rem;
+  }
+}
+
+.section-overview {
+  padding: 10rem 2rem;
+  background-color: $color-secondary;
+
+  &--user {
+    background-color: $color-primary;
+  }
+
+  @include respond(bp-800) {
+    padding: 4rem 3rem;
+  }
+}
+
+.section-recipe {
+  padding: 4rem 0;
+
+  @include respond(bp-800) {
+    padding: 0rem 3rem;
+  }
+}
+
+.section-form {
+  padding: 10rem 0;
+  background-image: $gradient;
+  /*
+  background: repeating-linear-gradient(
+    to top left,
+    transparent,
+    transparent 5px,
+    $color-secondary 5px,
+    $color-secondary 10px
+  );*/
+}
+
+///////////////////////////////////
+
+.alert {
+  width: 80%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 9999;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 1.6rem 15rem;
+  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+}
+.alert--success {
+  background-color: #20bf6b;
+}
+.alert--error {
+  background-color: #eb4d4b;
+}

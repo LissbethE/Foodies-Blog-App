@@ -1,0 +1,52 @@
+extends base
+
+block content
+
+    main.content
+        section.section-account.account
+            nav.account__menu
+                ul.account__list
+                    li.account__item.account__item--active
+                        a.account__link.account__link--active
+                            svg.account__svg
+                                use(xlink:href="/img/sprite.svg#icon-cog")
+                            | Mi cuenta
+
+                    li.account__item
+                        a.account__link(href="/createRecipe")
+                            svg.account__svg
+                                use(xlink:href="/img/sprite.svg#icon-spoon-knife")
+                            | Crear Receta
+                    
+                    li.account__item
+                        a.account__link(href="/myRecipe")
+                            svg.account__svg
+                                use(xlink:href="/img/sprite.svg#icon-box-add")
+                            | Mis recetas
+
+                    
+           
+             
+
+            div.account__content
+                div.account__cotainer
+                    h2.heading-2--colorPrimary.u-margin-bottom-small-2  Configuración de tu cuenta
+                    form.form-user-data
+                        .form__group.u-margin-bottom-medium 
+                            label.form__label(for='name') Nombre
+                            input#name.form__input(type='text', value=`${user.name}`, required, name="name")
+                        
+                        .form__photo-upload.u-margin-bottom-medium 
+                            img.form__user-photo(src=`/img/users/${user.photo}`, alt=`${user.name}`)
+                            input#photo.form__upload(type="file", accept="image/*", name="photo")
+                            label.form__photo-label(for="photo") Elige nueva foto
+                        
+                        .form__group
+                            button.btn.btn--main.btn--main--move Guardar ajustes
+
+                .account__line &nbsp;
+
+                div.account__cotainer
+                    p.paragraph Si decides eliminar tu cuenta, todas tus recetas serán borradas. Lamentamos informarte que esta acción no se puede deshacer. ¿Estás seguro de que quieres eliminar tu cuenta?
+                    button#btn-deleteMe.btn.btn--main.btn--main--move.u-margin-top-small-2 Eliminar mi cuenta
+                

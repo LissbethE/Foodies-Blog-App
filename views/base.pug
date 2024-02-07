@@ -1,0 +1,27 @@
+doctype html 
+html
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        link(rel='stylesheet' type="text/css" href="/css/style.css")
+        link(rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="")
+        
+        link(rel="icon", href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥣</text></svg>")
+        title= `Foodies Blog | ${ title || ""}`
+
+
+    body
+        // N A V I G A T I O N
+        include _navigation
+
+        // C O N T E N T
+        block content
+
+        // F O O T E R
+        include _footer
+
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+    script(type="module" src='/js/auth.js')
+    script(type="module" src='/js/recipe.js')
+
+

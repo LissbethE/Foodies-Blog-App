@@ -1,0 +1,158 @@
+.recipe {
+  // background-color: purple;
+  padding: 0rem 0;
+
+  &__header {
+    //background-color: pink;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+
+    gap: 3rem;
+    padding: 0rem 0;
+
+    @include respond(tab-portrait) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 40rem 1fr;
+    }
+  }
+
+  &__heading-box {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &__img-box {
+    height: 50rem;
+    background-color: yellow;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    @include respond(tab-portrait) {
+      height: 100%;
+    }
+  }
+
+  &__img {
+    width: 100%; // 35 * 2
+    height: 100%; // 50rem
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    //  box-shadow: 0rem 0rem 3rem 0rem rgba(0, 0, 0, 0.3);
+    outline: 1px solid $color-light;
+    outline-offset: -2rem;
+  }
+
+  &__description {
+    //padding: 0 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__paragraph {
+    text-align: center;
+    padding: 0 2rem;
+
+    @include respond(bp-800) {
+      padding: 0;
+    }
+  }
+
+  ////////////////////////////////
+  /// Ingredients
+
+  &__ingredients {
+    background-color: $color-secondary;
+    padding: 10rem 3rem;
+
+    @include respond(bp-800) {
+      padding: 5rem 2rem;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    column-count: 2;
+    column-gap: 7rem;
+    column-rule: 2px solid $color-light;
+    list-style: none;
+
+    @include respond(tab-portrait) {
+      column-count: 1;
+    }
+  }
+
+  &__item {
+    font-size: 2rem;
+    display: flex;
+    gap: 1rem;
+
+    @include respond(smallPhone) {
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      border: 1px solid $color-light;
+    }
+
+    & > .dot {
+      flex-grow: 2;
+      border-bottom: 2px dotted $color-light;
+      margin-bottom: 1rem;
+
+      @include respond(smallPhone) {
+        flex-grow: 0;
+        border-bottom: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  ////////////////////////////////
+  /// Ingredients
+
+  &__cook {
+    & p:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  ///////////////////////////////////
+  &__user {
+    width: 100%;
+    padding: 2rem;
+    background-color: #e3e3e3;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  &__user-photo {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: block;
+    object-fit: cover;
+  }
+
+  &__user-name {
+    font-size: 3rem;
+    font-family: $font-pacifico;
+  }
+}

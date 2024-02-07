@@ -1,0 +1,55 @@
+.btn {
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.5s ease-in;
+
+  &--signup {
+    color: $color-light;
+    background-color: $color-primary;
+    padding: 0.4rem 2rem;
+
+    &:hover {
+      transform: scaleX(1.1);
+    }
+
+    &:active {
+      transform: scaleX(0.95);
+    }
+  }
+
+  &--login,
+  &--Logout {
+    font-weight: 700;
+
+    &:hover {
+      transform: translateY(-0.4rem);
+      text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &--main {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    color: $color-light;
+    background-color: $color-primary;
+    border: 2px solid transparent;
+
+    &:hover {
+      color: $color-primary;
+      background-color: transparent;
+      border: 2px solid $color-primary;
+    }
+
+    &--move {
+      align-self: flex-start;
+    }
+  }
+}

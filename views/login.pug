@@ -1,0 +1,19 @@
+extends base
+
+block content
+
+  main.content
+    section.section-form 
+      form.form.form--login
+        h1.heading-1.heading-1--gradient.u-center-text Ingresa a su cuenta
+
+        div.form__group
+          label(for="email").form__label Correo electrónico
+          input#email.form__input(type='email', placeholder='you@example.com', required)
+
+        div.form__group
+          label(for="password").form__label Contraseña
+          input#password.form__input(type='password', placeholder='••••••••', minlength='8', required)
+
+        div.form__group
+          button(type="submit").btn.btn--main.form__btn Iniciar Sesíon

@@ -1,0 +1,61 @@
+section.section-overview.section-overview--user.u-margin-top-big
+    h1.heading-1.heading-1--light.u-margin-bottom-medium.u-center-text Recetas de nuestros usuarios
+
+    div.card-container
+        each recipe in userRecipes
+            div.card
+                if user && recipe.user
+                    if recipe.user._id.toString() === user._id.toString()
+                        button#deleteRecipe.card__btn-delete(type="button", data-recipeid=`${recipe._id}`) X
+                     
+
+
+                img(src=`/img/recipes/${recipe.recipePhoto}`, alt=`${recipe.nombre}`).card__img 
+
+                div.card__heading-box.card__heading-box--user
+                    h3.card__heading= recipe.nombre
+
+
+                div.recipeInfo.u-margin-bottom-small-2
+                    div.recipeInfo__box
+                        svg.recipeInfo__icon.recipeInfo__icon--user 
+                            use(xlink:href="/img/sprite.svg#icon-document")
+                        p.paragraph.paragraph--recipeInfo= `Receta ${recipe.tipo}`
+
+                    div.recipeInfo__box
+                        svg.recipeInfo__icon.recipeInfo__icon--user 
+                            use(xlink:href="/img/sprite.svg#icon-bowl")
+                        p.paragraph.paragraph--recipeInfo= `Plato ${recipe.plato}`
+
+                    div.recipeInfo__box
+                        svg.recipeInfo__icon.recipeInfo__icon--user 
+                            use(xlink:href="/img/sprite.svg#icon-bar-graph")
+                        p.paragraph.paragraph--recipeInfo= `Dificultad ${recipe.dificultad}`
+
+                    div.recipeInfo__box
+                        svg.recipeInfo__icon.recipeInfo__icon--user 
+                            use(xlink:href="/img/sprite.svg#icon-hour-glass")
+                        p.paragraph.paragraph--recipeInfo= `${recipe.duracion}m`
+
+                    div.recipeInfo__box
+                        svg.recipeInfo__icon.recipeInfo__icon--user 
+                            use(xlink:href="/img/sprite.svg#icon-users")
+                        p.paragraph.paragraph--recipeInfo= `${recipe.comensales} comensales` 
+
+                    div.recipeInfo__box
+                        svg.recipeInfo__icon.recipeInfo__icon--user 
+                            use(xlink:href="/img/sprite.svg#icon-credit")
+                        p.paragraph.paragraph--recipeInfo= `Coste ${recipe.costo}`    
+
+                p.paragraph.card__description= `${recipe.resumen.slice(0, 100)}` 
+                
+
+                if recipe.user
+                    div.card__user.u-margin-top-small-2
+                        img.card__user-photo(src=`/img/users/${recipe.user.photo}`, alt=`${recipe.user.name}`)
+                        h3.card__user-name= recipe.user.name
+                        a(href=`/recipe/${recipe.slug}`).card__link.card__link--user ver receta &#8594;
+
+
+                else
+                    a(href=`/recipe/${recipe.slug}`).card__link.u-margin-bottom-small-2 ver receta &#8594;

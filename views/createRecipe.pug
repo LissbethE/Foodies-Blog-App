@@ -1,0 +1,95 @@
+extends base
+
+block content
+
+    main.content
+        section.section-form
+
+           form(enctype="multipart/form-data").form.form--w80.formCreateRecipe
+                h1.heading-1.heading-1--size-small.heading-1--gradient.u-center-text ¡Comencemos el proceso de crear comida excepcional y sorprendente! 
+                h3.heading-3.u-center-text.u-margin-bottom-medium Puedes guardar tus propias recetas o compartirlas con otros.
+
+                div.form__grid-2
+                    div.form__group
+                        label.form__label(for='nombre') Nombre de la receta
+                        input#nombre.form__input(type='text', required, name="nombre", placeholder='Nombre de la receta')
+
+               
+                    div.form__photo-upload.form__photo-upload--center
+                        input#recipePhoto.form__upload(type="file", accept="image/*", name="recipePhoto")
+                        label.form__photo-label(for="recipePhoto") Agrega una foto
+
+
+                div.form__group
+                    label.form__label(for='resumen') Descripción
+                    p ¿Cómo describe tu receta?
+                    textarea#resumen.form__textarea(name="resumen",  cols="30", rows="10")
+
+
+                div.form__group
+                    label.form__label(for='ingredientes') Ingredientes
+                    p Agrega los ingredientes que llevará tu receta
+                    small Ejemplo: 2 Cebolla 
+
+                    div.form__recipeList
+                        div.form__recipeItem
+                            input#cantidadIngredientes.form__input.form__input-50(type='text', placeholder='Cantidad de ingrediente')
+                            input#ingredientes.form__input.form__input-50(type='text', required, placeholder='Ingrediente')
+
+                    button#addIngredBtn.btn.btn--main.btn--main--move.btn--main--color(type='button') Mas Ingrediente
+
+
+                div.form__group
+                    label.form__label(for='preparacion') Preparación
+                    p Por favor proporcione instrucciones sobre cómo hacer su receta.
+                    textarea#preparacion.form__textarea(name="preparacion",  cols="30", rows="10")
+
+                //- //////////////////////////////
+                div.form__select-box
+                    div.form__group
+                        label.form__label(for='tipo') Selecciona el tipo de la receta
+                        select#tipo.form__select(name="tipo", ariaLabel="tipo")
+                            option(value="salada") Salada
+                            option(value="vegetariana") Vegetariana
+                            option(value="dulce") Dulce
+
+                    div.form__group
+                        label.form__label(for='dificultad') Dificultad de la receta.
+                        select#dificultad.form__select(name="dificultad", ariaLabel="dificultad")
+                            option(value="fácil") Fácil
+                            option(value="media") Media
+                            option(value="difícil") Difícil
+
+                    div.form__group
+                        label.form__label(for='comensales') Cantidad de comensales
+                        input#comensales.form__input(type='number', required)
+
+                    div.form__group
+                        label.form__label(for='plato') Tipo de plato
+                        select#plato.form__select(name="plato", ariaLabel="plato")
+                            option(value="Entrada") Entrada
+                            option(value="Plato principal") Plato principal
+                            option(value="Postre") Postre
+
+                    div.form__group
+                        label.form__label(for='duracion') Tiempo de preparacion
+                        input#duracion.form__input(type='number', required)
+
+                    div.form__group
+                        label.form__label(for='costo') Costo
+                        select#costo.form__select(name="costo", ariaLabel="costo")
+                            option(value="barato") Barato
+                            option(value="medio") Medio
+                            option(value="caro") Caro
+
+                div.form__group
+                    label.form__label(for='visible') ¿Quieres mantener tu receta privada?
+                    select#visible.form__select(name="visible", ariaLabel="visible")
+                        option(value="true") Si
+                        option(value="false") No
+
+                div#dataUser(data-user=`${user._id}`)
+
+                button.btn.btn--main(type="submit") Crear receta
+
+

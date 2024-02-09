@@ -21,7 +21,7 @@
 <br/>
 
 <div align=center>
-<span align=center>🌐The online site: <a href="https://foodiesblog-app.onrender.com/" target="_blank">🥣 Foodies Blog</a></span>
+<span align=center>🌐The online site: <a href="https://foodies-blog-app.onrender.com" target="_blank">🥣 Foodies Blog</a></span>
 </div>
 
 </br>

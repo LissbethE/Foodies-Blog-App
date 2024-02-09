@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Pacifico&display=swap");
 html {
   font-size: 62.5%;
@@ -24,25 +23,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  background-color: #f6f6f6;
-  /*
-  &::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: $color-light;
-
-    box-shadow: inset 0 0 5px grey;
-    // border-radius: 10px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: $color-secondary;
-    // border-radius: 10px;
-    // border: 5px solid $color-light;
-  }*/ }
+  background-color: #f6f6f6; }
 
 *,
 *::before,
@@ -105,13 +86,16 @@ a {
     $color-secondary 10px
   );*/ }
 
-/*
-  h1 crear receta
-         Comparte tus deliciosas recetas con amantes de la comida de todo el mundo. Complete nuestro formulario para comenzar.
-        p ¿Tiene recetas increíbles para compartir con los amantes de la comida de todo el mundo? ¡Complete nuestro formulario para comenzar!
+.section-error {
+  padding: 15rem 2rem;
+  background-color: #98ded9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
 
-        */
 .alert {
+  width: 80%;
   position: fixed;
   top: 0;
   left: 50%;
@@ -194,6 +178,8 @@ body {
     text-align: left; }
   .paragraph--color-light {
     color: #f6f6f6; }
+  .paragraph--size {
+    font-size: 2rem; }
 
 .u-center-text {
   text-align: center !important; }

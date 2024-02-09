@@ -13,8 +13,8 @@ header.header
             | Asimismo, puedes explorar las recetas de otros usuarios para experimentar algo diferente en la cocina.
             | ¡Es la plataforma perfecta para organizar tus ideas culinarias y descubrir nuevas propuestas para tus platos!
 
-        p.paragraph.u-margin-bottom-medium
-            span No esperes más resquistrate ¡Ahora mismo! 
-
-        a(href='/signup').btn.btn--main ¡Regístrate en Foodies Blog! 😉
+        if !user
+            p.paragraph.u-margin-bottom-medium
+                span No esperes más resquistrate ¡Ahora mismo! 
+            a(href='/signup').btn.btn--main ¡Regístrate en Foodies Blog! 😉
             

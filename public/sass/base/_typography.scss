@@ -90,4 +90,8 @@ body {
   &--color-light {
     color: $color-light;
   }
+
+  &--size {
+    font-size: 2rem;
+  }
 }

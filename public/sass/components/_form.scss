@@ -184,6 +184,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+
+  @include respond(tab-portrait){
+     grid-template-columns: 1fr;
+     gap: 3rem;
+  }
   }
 
   &__recipeItem {

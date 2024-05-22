@@ -17,7 +17,7 @@
 
 <br/>
 
-<div align=center><img src="public/img/Foodies-Blog-Hamburguesa-casera-de-carne-molida-🍔.png"  width="90%"/></div>
+<div align=center><img src="public/img/H-foodiesBlog.png"  width="90%"/></div>
 <br/>
 
 <div align=center>
